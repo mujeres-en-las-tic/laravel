@@ -47,5 +47,5 @@ Route::resource('products', 'ProductController');
 // Route::delete('/products/{id}',     'ProductController@destroy');
 
 Route::get('/contacto', function(){
-    return "Página contacto";
+    return view('contacto');
 })->name('contacto');
