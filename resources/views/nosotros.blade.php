@@ -1,13 +1,11 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title')
     Sobre Notros
 @endsection
 
-@include('sidebar')
-
 @section('content')
-  <h1>Soy la página Nosotros</h1>  
+  <h1>Página Nosotros</h1>  
 @endsection
 
 

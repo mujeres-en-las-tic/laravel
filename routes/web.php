@@ -13,27 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Página Inicio
 Route::get('/', function () {
 
+     // variable, que contiene un texto
     $programa = 'Mujeres en las TIC 2020..';
 
+    // Retornar una vista con datos
     return view('index')->with('programa', $programa );
 
 })->name('inicio');
 
-
+// Página Nosotros
 Route::get('/nosotros', function () {
+    // Retornar una vista
     return view('nosotros');
 })->name('nosotros');
 
-Route::get('/productos', 'ProductosController@show')
-    ->name('productos');
+
+/* 
+* Resource Controller
+* El nombre en plural y el nombre del controlador en singular,
+* unido con la palabra controller
+*/
+Route::resource('products', 'ProductController');
+
+// Route::get('/products',             'ProductController@index');
+// Route::get('/products/new',         'ProductController@create');
+// Route::post('/products',            'ProductController@store');
+// Route::get('/products/{id}',        'ProductController@show');
+// Route::get('/products/{id}/edit',   'ProductController@edit');
+// Route::patch('/products/{id}',      'ProductController@update');
+// Route::delete('/products/{id}',     'ProductController@destroy');
 
 Route::get('/contacto', function(){
     return "Página contacto";
 })->name('contacto');
-
-
-
-
