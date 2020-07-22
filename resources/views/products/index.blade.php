@@ -42,7 +42,7 @@
               {{ $product->description }}
             </td>
             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-              {{ $product->category }}
+              {{ $product->category->name }}
             </td>
             <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
             <a href="{{ route('products.edit', [$product]) }}" class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline">Editar</a>

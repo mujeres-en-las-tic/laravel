@@ -18,7 +18,14 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->double('price');
             $table->string('description')->nullable();
-            $table->string('category')->nullable();
+            // $table->string('category')->nullable();
+
+            // $table->unsignedBigInteger('category_id');
+
+            // $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->foreignId('category_id')->constrained();
+
             $table->string('sku')->nullable();
             $table->string('barcode')->nullable();
             $table->timestamps();

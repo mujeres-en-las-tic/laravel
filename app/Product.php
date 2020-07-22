@@ -23,4 +23,14 @@ class Product extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /*
+    * Un Producto pertenece a una categoría
+    */ 
+
+    public function category() 
+    {
+        return $this->belongsTo('App\Category');
+    }
+
 }

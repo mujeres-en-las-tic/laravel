@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::all();
+        // $products = Product::all();
+
+        $products = Product::with('category')->get();
 
         return view('products.index', [
             'products' => $products
@@ -29,7 +32,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('products.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -50,6 +55,7 @@ class ProductController extends Controller
             'name',
             'description',
             'price',
+            'category_id'
         ));
 
         return redirect()->route('products.show', [$product])
@@ -79,7 +85,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         return view('products.edit', [
-            'product' => $product
+            'product' => $product,
+            'categories' => Category::all()
         ]);
     }
 
