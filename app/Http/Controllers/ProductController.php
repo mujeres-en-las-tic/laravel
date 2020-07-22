@@ -53,7 +53,7 @@ class ProductController extends Controller
         ));
 
         return redirect()->route('products.show', [$product])
-                ->with('status', 'Product created!');
+                ->with('status', 'Producto creado');
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductController extends Controller
         ]));
 
         return redirect()->route('products.show', [$product])
-                ->with('status', 'Product updated!');
+                ->with('status', 'Producto actualizado!');
     }
 
     /**
@@ -120,6 +120,6 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('products.index')
-            ->with('status', 'Product deleted!');
+            ->with('status', '¡Producto eliminado!');
     }
 }
