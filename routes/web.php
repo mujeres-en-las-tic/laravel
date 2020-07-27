@@ -49,3 +49,6 @@ Route::resource('products', 'ProductController');
 Route::get('/contacto', function(){
     return view('contacto');
 })->name('contacto');
+
+
+Route::get('send-email', 'ContactController@myTestMail');
