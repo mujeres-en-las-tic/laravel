@@ -33,7 +33,7 @@ class ContactController extends Controller
         Una vez enviado el correo, regresamos a la pagina inicio
         con un mensaje
         */
-        // return redirect('/')->with('status', 'Correo enviado');
+        return redirect('/')->with('status', 'Correo enviado');
 
         // Mostrar una vista previa del correo, en el navegador
         // return new \App\Mail\MyTestMail($details);
